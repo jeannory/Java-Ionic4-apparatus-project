@@ -27,6 +27,9 @@ public class Apparatus {
     @Column(name = "description")
     private List<String> description;
 
+    @Column(name = "light")
+    private Boolean light;
+
     public int getId() {
         return id;
     }
@@ -49,5 +52,13 @@ public class Apparatus {
 
     public void setDescription(List<String> description) {
         this.description = description;
+    }
+
+    public Boolean isLight() {
+        return light;
+    }
+
+    public void setLight(Boolean light) {
+        this.light = light;
     }
 }

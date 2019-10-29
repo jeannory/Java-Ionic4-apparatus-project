@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Appareil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card-header>
+    <ion-card-title>{{ apparatus.name }}</ion-card-title>
+  </ion-card-header>
+  <ion-card-content *ngFor="let line of apparatus.description">
+    {{ line }}
+  </ion-card-content>
+  <ion-button full (click)="dismissModal()" color="danger">Annuler</ion-button>
+</ion-content>

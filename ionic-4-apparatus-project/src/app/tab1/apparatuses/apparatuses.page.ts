@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
 import { Observable } from 'rxjs';
+import { ModalController } from '@ionic/angular';
+import { ApparatusSingleV2Page } from '../apparatus-single-v2/apparatus-single-v2.page';
+import { Apparatus } from 'src/app/models/apparatus';
 
 @Component({
   selector: 'app-apparatuses',
@@ -9,37 +12,52 @@ import { Observable } from 'rxjs';
 })
 export class ApparatusesPage implements OnInit {
 
-  //apparatuses : Observable<any>;
-  apparatuses : any;
+  apparatuses : Apparatus[];
 
-  constructor(public  apiService : ApiService) {
-  //  this.apparatuses = this.apiService.getApparatuses();
+  constructor(
+    private apiService : ApiService,
+    private modalCtrl : ModalController
+    ) {
   this.apparatuses = [];
    }
 
   ngOnInit() {
-    //this.getApparatuses();
     this.getApparatuses() ;
   }
 
-  /** 
-  getApparatuses(){
-    this.apiService.getApparatuses()
-    .subscribe(data=>{
-      this.apparatuses = data
-    }),
-    err=>{
-      console.log(err);
-    }
-  }
-  */
-
  getApparatuses() {
-  //Get saved list of students
-  this.apiService.getList().subscribe(response => {
+  this.apiService.getApparatuses().subscribe(response => {
     console.log(response);
     this.apparatuses = response;
   })
+}
+
+lightOffApparatus(apparatus:Apparatus){
+  apparatus.light=false;
+  this.setApparatus(apparatus);
+}
+
+lightOnApparatus(apparatus:Apparatus){
+  apparatus.light=true;
+  this.setApparatus(apparatus);
+}
+
+setApparatus(apparatus:Apparatus){
+  this.apiService.setApparatus(apparatus).subscribe(response => {
+    console.log(response);
+    this.apparatuses = response;
+  })
+}
+
+async onLoadApparatus(apparatus:{name:string, description:string[]})
+{
+
+  const modalPage = await this.modalCtrl.create({
+    component: ApparatusSingleV2Page, 
+    componentProps:{ apparatus : apparatus}
+  });
+
+  return await modalPage.present();
 }
 
 }

@@ -7,6 +7,7 @@ public class ApparatusDTO {
     private int id;
     private String name;
     private List<String> description;
+    private Boolean light;
 
     public ApparatusDTO() {
     }
@@ -33,5 +34,13 @@ public class ApparatusDTO {
 
     public void setDescription(List<String> description) {
         this.description = description;
+    }
+
+    public Boolean isLight() {
+        return light;
+    }
+
+    public void setLight(Boolean light) {
+        this.light = light;
     }
 }

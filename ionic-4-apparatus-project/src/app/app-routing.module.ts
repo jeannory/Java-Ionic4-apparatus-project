@@ -4,6 +4,8 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   { path: 'tabs', loadChildren: './tabs/tabs.module#TabsPageModule' },
   { path: '', loadChildren: './home/home.module#HomePageModule' },
+  //{ path: 'apparatus-single-v2', loadChildren: './tab1/apparatus-single-v2/apparatus-single-v2.module#ApparatusSingleV2PageModule' },
+  //{ path: 'settings', loadChildren: './tab3/settings/settings.module#SettingsPageModule' },
   //{ path: 'apparatus-single-v1', loadChildren: './tab1/apparatus-single-v1/apparatus-single-v1.module#ApparatusSingleV1PageModule' },
   //{ path: 'apparatuses', loadChildren: './tab1/apparatuses/apparatuses.module#ApparatusesPageModule' },
   /** 

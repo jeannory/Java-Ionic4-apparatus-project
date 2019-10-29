@@ -4,10 +4,7 @@ import com.apparatus.dtos.ApparatusDTO;
 import com.apparatus.services.IApparatusService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -31,5 +28,11 @@ public class ApparatusController {
     @GetMapping(value = "/getApparatuses")
     public List<ApparatusDTO> getApparatuses(){
         return apparatusService.findAllApparatusDTO();
+    }
+
+    //http://127.0.0.1:8080/api/v1/apparatus/setApparatus
+    @PutMapping(value = "/setApparatus")
+    public List<ApparatusDTO> setApparatus(@RequestBody final ApparatusDTO apparatusDTO){
+        return apparatusService.setApparatus(apparatusDTO);
     }
 }

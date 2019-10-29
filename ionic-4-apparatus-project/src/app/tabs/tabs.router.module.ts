@@ -21,6 +21,10 @@ const routes: Routes = [
           {
             path: 'apparatus-single-v1/:name', 
             loadChildren: '../tab1/apparatus-single-v1/apparatus-single-v1.module#ApparatusSingleV1PageModule' 
+          },
+          {
+            path: 'apparatus-single-v2', 
+            loadChildren: '../tab1/apparatus-single-v2/apparatus-single-v2.module#ApparatusSingleV2PageModule'
           }
         ]
       },
@@ -39,6 +43,9 @@ const routes: Routes = [
           {
             path: '',
             loadChildren: '../tab3/tab3.module#Tab3PageModule'
+          },
+          {
+            path: 'settings', loadChildren: '../tab3/settings/settings.module#SettingsPageModule'
           }
         ]
       },

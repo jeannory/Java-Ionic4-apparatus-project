@@ -11,10 +11,11 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
+import { ApparatusSingleV2Page } from './tab1/apparatus-single-v2/apparatus-single-v2.page';
 
 @NgModule({
-  declarations: [AppComponent],
-  entryComponents: [],
+  declarations: [AppComponent, ApparatusSingleV2Page],
+  entryComponents: [ApparatusSingleV2Page],
   imports: [
     BrowserModule, 
     IonicModule.forRoot(), 

@@ -1,6 +1,7 @@
 import { Injectable, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Apparatus } from '../models/apparatus';
 
 
 @Injectable({
@@ -13,14 +14,14 @@ export class ApiService implements OnInit{
   ngOnInit(){
   }
 
-  getApparatuses(){
-    return this.httpClient.get('localhost:8080/api/v1/apparatus/getApparatuses');
-  }
-
-   // Get students data
-   getList(): Observable<any> {
+   getApparatuses(): Observable<any> {
     return this.httpClient
       .get<any>('http://127.0.0.1:8080/api/v1/apparatus/getApparatuses');
+  }
+
+  setApparatus(apparatus : Apparatus): Observable<any> {
+    return this.httpClient
+    .put<any>('http://127.0.0.1:8080/api/v1/apparatus/setApparatus', apparatus);
   }
 
 }

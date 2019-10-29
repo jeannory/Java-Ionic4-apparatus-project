@@ -11,13 +11,26 @@
 
   <h3>Liste des appareils v2</h3>
 
-   <ion-card *ngFor="let apparetus of apparatuses">
+   <ion-card *ngFor="let apparatus of apparatuses" [color]="apparatus.light ? 'secondary' : 'danger'">
      <ion-card-header>
-       <ion-card-title>{{ apparetus.name }}</ion-card-title>
+       <ion-card-title>{{ apparatus.name }}</ion-card-title>
      </ion-card-header>
 
-     <ion-card-content *ngFor="let line of apparetus.description">
+     <ion-card-content *ngFor="let line of apparatus.description">
         {{ line }}
      </ion-card-content>
+     <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-button full (click)="lightOffApparatus(apparatus)" color="danger">Eteindre</ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button full (click)="lightOnApparatus(apparatus)" color="secondary">Allumer</ion-button>
+          </ion-col>
+          <ion-col>
+              <ion-button full (click)="onLoadApparatus(apparatus)">Choisir</ion-button>
+            </ion-col>
+        </ion-row>
+      </ion-grid>
    </ion-card>
 </ion-content>

@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Appareils</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h3>Liste des appareils v1</h3>
+  <ion-button expand="block" routerLink="/tabs/tabs/tab1/apparatus-single-v1/computer" routerDirection="forward">Ordinateur</ion-button>
+  <ion-button expand="block" routerLink="/tabs/tabs/tab1/apparatus-single-v1/television" routerDirection="forward">Télévision</ion-button>
+
+  <h3>Liste des appareils v2</h3>
+
+   <ion-card *ngFor="let apparetus of apparatuses">
+     <ion-card-header>
+       <ion-card-title>{{ apparetus.name }}</ion-card-title>
+     </ion-card-header>
+
+     <ion-card-content *ngFor="let line of apparetus.description">
+        {{ line }}
+     </ion-card-content>
+   </ion-card>
+</ion-content>

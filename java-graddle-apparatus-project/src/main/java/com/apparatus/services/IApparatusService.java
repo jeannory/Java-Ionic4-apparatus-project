@@ -10,5 +10,7 @@ public interface IApparatusService {
 
     List<ApparatusDTO> findAllApparatusDTO();
 
-    List<ApparatusDTO> setApparatus(ApparatusDTO apparatusDTO);
+    List<ApparatusDTO> setApparatus(final ApparatusDTO apparatusDTO);
+
+    ApparatusDTO addApparatus(final ApparatusDTO apparatusDTO);
 }

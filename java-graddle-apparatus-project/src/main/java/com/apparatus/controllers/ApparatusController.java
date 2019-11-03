@@ -35,4 +35,10 @@ public class ApparatusController {
     public List<ApparatusDTO> setApparatus(@RequestBody final ApparatusDTO apparatusDTO){
         return apparatusService.setApparatus(apparatusDTO);
     }
+
+    //http://127.0.0.1:8080/api/v1/apparatus/addApparatus
+    @PostMapping(value="/addApparatus")
+    public ApparatusDTO addApparatus(@RequestBody final ApparatusDTO apparatusDTO){
+        return apparatusService.addApparatus(apparatusDTO);
+    }
 }

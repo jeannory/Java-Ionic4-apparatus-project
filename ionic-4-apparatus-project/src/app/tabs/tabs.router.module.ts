@@ -25,6 +25,10 @@ const routes: Routes = [
           {
             path: 'apparatus-single-v2', 
             loadChildren: '../tab1/apparatus-single-v2/apparatus-single-v2.module#ApparatusSingleV2PageModule'
+          },
+          {
+            path: 'apparatus-new', 
+            loadChildren: '../tab1/apparatus-new/apparatus-new.module#ApparatusNewPageModule'
           }
         ]
       },
@@ -34,7 +38,7 @@ const routes: Routes = [
           {
             path: '',
             loadChildren: '../tab2/tab2.module#Tab2PageModule'
-          }
+          },
         ]
       },
       {
@@ -45,7 +49,16 @@ const routes: Routes = [
             loadChildren: '../tab3/tab3.module#Tab3PageModule'
           },
           {
-            path: 'settings', loadChildren: '../tab3/settings/settings.module#SettingsPageModule'
+            path: 'settings', 
+            loadChildren: '../tab3/settings/settings.module#SettingsPageModule'
+          },
+          {
+            path: 'loggin', 
+            loadChildren: '../tab3/loggin/loggin.module#LogginPageModule'
+          },
+          {
+            path: 'framework-form',
+            loadChildren: '../tab3/framework-form/framework-form.module#FrameworkFormPageModule'
           }
         ]
       },

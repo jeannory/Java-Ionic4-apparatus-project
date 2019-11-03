@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -55,6 +56,7 @@ public class ApparatusServiceImpl implements IApparatusService{
         final List<Apparatus> apparatuses = apparatusRepository.findAll();
         final List<ApparatusDTO> apparatusDTOS =
                 apparatuses.stream().map(apparatus -> modelMapper.map(apparatus, ApparatusDTO.class))
+                        .sorted(Comparator.comparing((ApparatusDTO::getId)))
                         .collect(Collectors.toList());
         return apparatusDTOS;
     }
@@ -73,5 +75,13 @@ public class ApparatusServiceImpl implements IApparatusService{
         }
         apparatusRepository.save(apparatus.get());
         return findAllApparatusDTO();
+    }
+
+    @Override
+    public ApparatusDTO addApparatus(final ApparatusDTO apparatusDTO){
+        Apparatus apparatus = modelMapper.map(apparatusDTO, Apparatus.class);
+        apparatus = apparatusRepository.save(apparatus);
+        apparatusDTO.setId(apparatus.getId());
+        return apparatusDTO;
     }
 }

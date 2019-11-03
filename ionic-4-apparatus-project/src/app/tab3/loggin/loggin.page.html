@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>loggin</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-row class="ion-justify-content-center">
+        <ion-col size-sm="12" size-lg="5">
+          <div class="ion-padding login-card">
+            <ion-card>
+              <ion-card-header color="secondary" class="login-card-header">
+                <ion-card-title>Login</ion-card-title>
+              </ion-card-header>
+              <ion-card-content>
+                <form (ngSubmit)="onClickSubmit()" padding-right [formGroup]="loginForm">
+                  <ion-item lines="inset">
+                    <ion-label position="floating">Username</ion-label>
+                    <ion-input  formControlName="username"></ion-input>
+                  </ion-item>
+                  <ion-item lines="inset">
+                    <ion-label position="floating">Password</ion-label>
+                    <ion-input formControlName="password" type="password"></ion-input>
+                  </ion-item>
+                  <ion-item lines="none" class="ion-item-right-margin">
+                    <ion-button size="default" slot="end" type="submit" [disabled]="!loginForm.valid">Submit</ion-button>
+                  </ion-item>
+                  </form>
+              </ion-card-content>
+            </ion-card>
+          </div>
+        </ion-col>
+      </ion-row>
+  <ion-button full (click)="dismissModal()" color="danger">Annuler</ion-button>
+
+</ion-content>

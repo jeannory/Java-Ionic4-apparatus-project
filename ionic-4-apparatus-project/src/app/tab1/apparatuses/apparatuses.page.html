@@ -10,8 +10,10 @@
   <ion-button expand="block" routerLink="/tabs/tabs/tab1/apparatus-single-v1/television" routerDirection="forward">Télévision</ion-button>
 
   <h3>Liste des appareils v2</h3>
-
+  <!--
    <ion-card *ngFor="let apparatus of apparatuses" [color]="apparatus.light ? 'secondary' : 'danger'">
+  -->
+<ion-card *ngFor="let apparatus of apparatuses" [ngClass]="{'is-on' : apparatus.light, 'is-off' : !apparatus.light}"> 
      <ion-card-header>
        <ion-card-title>{{ apparatus.name }}</ion-card-title>
      </ion-card-header>
@@ -33,4 +35,5 @@
         </ion-row>
       </ion-grid>
    </ion-card>
+   <ion-button full (click)="goToApparatusForm()">Nouveau</ion-button>
 </ion-content>

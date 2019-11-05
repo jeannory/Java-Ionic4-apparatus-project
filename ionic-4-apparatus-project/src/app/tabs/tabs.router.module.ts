@@ -22,14 +22,17 @@ const routes: Routes = [
             path: 'apparatus-single-v1/:name', 
             loadChildren: '../tab1/apparatus-single-v1/apparatus-single-v1.module#ApparatusSingleV1PageModule' 
           },
+          /** 
           {
             path: 'apparatus-single-v2', 
             loadChildren: '../tab1/apparatus-single-v2/apparatus-single-v2.module#ApparatusSingleV2PageModule'
           },
+          
           {
             path: 'apparatus-new', 
             loadChildren: '../tab1/apparatus-new/apparatus-new.module#ApparatusNewPageModule'
           }
+          */
         ]
       },
       {
@@ -39,6 +42,10 @@ const routes: Routes = [
             path: '',
             loadChildren: '../tab2/tab2.module#Tab2PageModule'
           },
+          {
+            path: 'map-v1', 
+            loadChildren: '../tab2/map-v1/map-v1.module#MapV1PageModule'
+          }
         ]
       },
       {
@@ -53,13 +60,15 @@ const routes: Routes = [
             loadChildren: '../tab3/settings/settings.module#SettingsPageModule'
           },
           {
-            path: 'loggin', 
-            loadChildren: '../tab3/loggin/loggin.module#LogginPageModule'
-          },
-          {
             path: 'framework-form',
             loadChildren: '../tab3/framework-form/framework-form.module#FrameworkFormPageModule'
           }
+          /** 
+          {
+            path: 'loggin', 
+            loadChildren: '../tab3/loggin/loggin.module#LogginPageModule'
+          },
+          */
         ]
       },
       {

@@ -4,6 +4,9 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   { path: 'tabs', loadChildren: './tabs/tabs.module#TabsPageModule' },
   { path: '', loadChildren: './home/home.module#HomePageModule' },
+  //{ path: 'all-museum', loadChildren: './tab2/all-museum/all-museum.module#AllMuseumPageModule' },
+
+  //{ path: 'map-v1', loadChildren: './tab2/map-v1/map-v1.module#MapV1PageModule' },
   //{ path: 'single-view', loadChildren: './tab2/single-view/single-view.module#SingleViewPageModule' },
   //{ path: 'new-view', loadChildren: './tab2/new-view/new-view.module#NewViewPageModule' },
   //{ path: 'set-coordinates', loadChildren: './tab2/set-coordinates/set-coordinates.module#SetCoordinatesPageModule' },

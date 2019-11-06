@@ -36,8 +36,8 @@ export class MapV1Page implements OnInit {
 
   loadMap(){
     Environment.setEnv({
-      API_KEY_FOR_BROWSER_RELEASE: '***',
-      API_KEY_FOR_BROWSER_DEBUG: '***'
+      API_KEY_FOR_BROWSER_RELEASE: '*****',
+      API_KEY_FOR_BROWSER_DEBUG: '*****'
     });
     this.map = GoogleMaps.create('map_canvas', {
       camera: {

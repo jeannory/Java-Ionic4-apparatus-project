@@ -9,7 +9,7 @@
          <ion-item margin-bottom no-lines>
             <ion-label floating>Appareil :</ion-label>
             <ion-input type="text" maxlength="40" formControlName="name"></ion-input>
-            <span>Svp enregistrer le nom de l'appareil (40 mots max)</span>
+            <span>Nom ici...</span>
          </ion-item>
          <div formArrayName="descriptions" margin-bottom>
             <section [formGroupName]="i" *ngFor="let tech of form.controls.descriptions.controls; let i = index">

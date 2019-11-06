@@ -21,7 +21,11 @@ export class Tab2Page implements OnInit {
   }
 
   onGoToMapV1(){
-    this.navCtrl.navigateForward('/tabs/tabs/tab2/map-v1')
+    this.navCtrl.navigateForward('/tabs/tabs/tab2/map-v1');
+  }
+
+  onGoToPhotoV1(){
+    this.navCtrl.navigateForward('/tabs/tabs/tab2/photo-v1');
   }
 
 }

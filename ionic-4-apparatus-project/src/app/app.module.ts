@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { IonicModule } from '@ionic/angular';
+import { RouteReuseStrategy } from '@angular/router';
+import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
@@ -12,6 +13,21 @@ import { ApparatusNewPage } from './tab1/apparatus-new/apparatus-new.page';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LogginPage } from './tab3/loggin/loggin.page';
 import { ApiService } from './services/api.service';
+import { Camera } from '@ionic-native/camera/ngx';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+
+export const firebaseConfig = {
+  apiKey: "*****",
+  authDomain: "*****",
+  databaseURL: "*****",
+  projectId: "*****",
+  storageBucket: "*****",
+  messagingSenderId: "*****",
+  appId: "*****:web:*****",
+};
 
 @NgModule({
   declarations: [
@@ -32,11 +48,17 @@ import { ApiService } from './services/api.service';
     HttpModule,
     HttpClientModule,
     ReactiveFormsModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
+    AngularFireStorageModule
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     ApiService,
+    Camera
   ],
   bootstrap: [AppComponent]
 })

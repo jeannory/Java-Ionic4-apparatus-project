@@ -45,6 +45,10 @@ const routes: Routes = [
           {
             path: 'map-v1', 
             loadChildren: '../tab2/map-v1/map-v1.module#MapV1PageModule'
+          },
+          {
+            path: 'photo-v1', 
+            loadChildren: '../tab2/photo-v1/photo-v1.module#PhotoV1PageModule'
           }
         ]
       },

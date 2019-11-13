@@ -18,6 +18,8 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireStorageModule } from '@angular/fire/storage';
+import { File } from '@ionic-native/file/ngx';
+import { FileOpener } from '@ionic-native/file-opener/ngx';
 
 export const firebaseConfig = {
   apiKey: "*****",
@@ -58,7 +60,9 @@ export const firebaseConfig = {
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     ApiService,
-    Camera
+    Camera,
+    File,
+    FileOpener
   ],
   bootstrap: [AppComponent]
 })

@@ -4,6 +4,15 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   { path: 'tabs', loadChildren: './tabs/tabs.module#TabsPageModule' },
   { path: '', loadChildren: './home/home.module#HomePageModule' },
+  /** 
+  {
+    path: 'folder-v1', loadChildren: () => import('./tab2/folder-v1/folder-v1.module').then( m => m.FolderV1PageModule)
+  },
+  {
+    path: 'folder-v1/:folder', loadChildren: () => import('./tab2/folder-v1/folder-v1.module').then( m => m.FolderV1PageModule)
+  },
+  */
+  //{ path: 'folder-v1', loadChildren: './folder-v1/folder-v1.module#FolderV1PageModule' },
   //{ path: 'photo-v1', loadChildren: './tab2/photo-v1/photo-v1.module#PhotoV1PageModule' },
   //{ path: 'map-v1', loadChildren: './tab2/map-v1/map-v1.module#MapV1PageModule' },
   //{ path: 'single-view', loadChildren: './tab2/single-view/single-view.module#SingleViewPageModule' },

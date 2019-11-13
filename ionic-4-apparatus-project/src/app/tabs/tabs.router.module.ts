@@ -49,7 +49,23 @@ const routes: Routes = [
           {
             path: 'photo-v1', 
             loadChildren: '../tab2/photo-v1/photo-v1.module#PhotoV1PageModule'
+          },
+          /** 
+          {
+            path: 'folder-v1', 
+            loadChildren: '../tab2/folder-v1/folder-v1.module#FolderV1PageModule'
+          },
+          {
+            path: 'folder-v1/:folder', 
+            loadChildren: '../tab2/folder-v1/folder-v1.module#FolderV1PageModule'
           }
+          */
+         {
+          path: 'folder-v1', loadChildren: () => import('../tab2/folder-v1/folder-v1.module').then( m => m.FolderV1PageModule)
+        },
+        {
+          path: 'folder-v1/:folder', loadChildren: () => import('../tab2/folder-v1/folder-v1.module').then( m => m.FolderV1PageModule)
+        },
         ]
       },
       {

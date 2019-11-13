@@ -1,10 +1,7 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ModalController, NavController } from '@ionic/angular';
-import { MapV1Page } from './map-v1/map-v1.page';
-//https://drissas.com/ionic-google-maps/
-//https://www.freakyjolly.com/ionic-4-add-google-maps-geolocation-and-geocoder-in-ionic-4-native-application/
-//https://www.javascripttuts.com/implementing-native-google-maps-in-an-ionic-application/
-//https://edupala.com/how-to-add-google-map-in-ionic-4/
+import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-tab2',
   templateUrl: './tab2.page.html',
@@ -13,7 +10,8 @@ import { MapV1Page } from './map-v1/map-v1.page';
 export class Tab2Page implements OnInit {
 
   constructor(
-    public navCtrl : NavController
+    public navCtrl : NavController,
+    //private router : Router
   ) {
   }
 
@@ -26,6 +24,11 @@ export class Tab2Page implements OnInit {
 
   onGoToPhotoV1(){
     this.navCtrl.navigateForward('/tabs/tabs/tab2/photo-v1');
+  }
+
+  onGoToFolderV1(){
+    this.navCtrl.navigateForward('/tabs/tabs/tab2/folder-v1');
+    //this.router.navigateByUrl(`/tabs/tab2/folder-v1`);
   }
 
 }
